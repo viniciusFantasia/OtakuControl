@@ -1,0 +1,2 @@
+"como deixar uma página só para os admnistradores?"
+"como compartilhar do mesmo banco de dados?"
