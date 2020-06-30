@@ -1,2 +1,3 @@
 "como deixar uma página só para os admnistradores?"
 "como compartilhar do mesmo banco de dados?"
+"O usuario pode alterar dados de sua propria conta, como fazer para essas alterações serem lançadas no banco?"
