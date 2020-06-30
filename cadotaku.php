@@ -15,10 +15,11 @@
     <br>
     <h3>Cadastro</h3>
     <form name="form1" action="inserirotaku.php" method="POST">
-        <label>Nome</label><br><input type="text" name="nome" value="" placeholder="Digite o nome" required><br><br>
-        <label>E-mail</label><br><input type="email" name="email" value="" placeholder="Digite o e-mail" required><br><br>
-        <label>Senha</label><br><input type="password" name="senha" value="" placeholder="Digite a senha" required><br><br>
-        <label>Qual seu anime favorito?</label><br><input type="text" name="animeFavorito" value="" placeholder="Digite anime favorito" required><br><br>
+        <label>Nome</label><br><input type="text" name="nome" value="" placeholder="Digite o Nome" required><br><br>
+        <label>Nickname</label><br><input type="text" name="nick" value="" placeholder="Digite seu Nickname (Apelido)" required><br><br>
+        <label>E-mail</label><br><input type="email" name="email" value="" placeholder="Digite o E-mail" required><br><br>
+        <label>Senha</label><br><input type="password" name="senha" value="" placeholder="Digite a Senha" required><br><br>
+        <label>Qual seu Anime Favorito?</label><br><input type="text" name="animefavorito" value="" placeholder="Digite Anime Favorito"><br><br>
         <input type="submit" value="Enviar">
         <input type="reset" value="Cancelar">
     </form><br>
