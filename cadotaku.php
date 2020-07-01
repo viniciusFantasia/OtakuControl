@@ -15,11 +15,11 @@
     <br>
     <h3>Cadastro</h3>
     <form name="form1" action="inserirotaku.php" method="POST">
-        <label>Nome</label><br><input type="text" name="nome" value="" placeholder="Digite o Nome" required><br><br>
-        <label>Nickname</label><br><input type="text" name="nick" value="" placeholder="Digite seu Nickname (Apelido)" required><br><br>
-        <label>E-mail</label><br><input type="email" name="email" value="" placeholder="Digite o E-mail" required><br><br>
-        <label>Senha</label><br><input type="password" name="senha" value="" placeholder="Digite a Senha" required><br><br>
-        <label>Qual seu Anime Favorito?</label><br><input type="text" name="animefavorito" value="" placeholder="Digite Anime Favorito"><br><br>
+        <label>Nome</label><br><input type="text" name="Nome" value="" placeholder="Digite o Nome" required><br><br>
+        <label>Nickname</label><br><input type="text" name="Nickname" value="" placeholder="Digite seu Nickname (Apelido)" required><br><br>
+        <label>E-mail</label><br><input type="email" name="Email" value="" placeholder="Digite o E-mail" required><br><br>
+        <label>Senha</label><br><input type="password" name="Senha" value="" placeholder="Digite a Senha" required><br><br>
+        <label>Qual seu Anime Favorito?</label><br><input type="text" name="AnimeFavorito" value="" placeholder="Digite Anime Favorito"><br><br>
         <input type="submit" value="Enviar">
         <input type="reset" value="Cancelar">
     </form><br>
@@ -51,15 +51,15 @@
                 </th>
             </tr>
             <?php
-            $sql = "Select * from TBOtaku order by nome";
+            $sql = "Select * from TBOtaku order by Nome";
             require_once "conexao.php";
             $result = $conn->query($sql);
             $dados = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($dados as $linha) {
-                echo "<tr><td>" . $linha["id"] . "</td><td>" . $linha["nome"] . "</td><td> " . $linha["email"] . "</td>" .
-                    "<td>" . $linha["animeFavorito"] . "</td>" .
-                    "<td><a href='editarpessoa1.php?id=" . $linha["id"] . "'>Editar</a> " .
-                    "<a href='excluirpessoa.php?id=" . $linha["id"] . "'>Excluir</a></td>" .
+                echo "<tr><td>" . $linha["IDOtaku"] . "</td><td>" . $linha["Nome"] . "</td><td>" . $linha["Nickname"] . "</td><td> " . $linha["Email"] . "</td>" .
+                    "<td>" . $linha["AnimeFavorito"] . "</td>" .
+                    "<td><a href='editarotaku1.php?id=" . $linha["IDOtaku"] . "'>Editar</a> " .
+                    "<a href='excluirotaku.php?id=" . $linha["IDOtaku"] . "'>Excluir</a></td>" .
                     "</tr>";
             }
             ?>
@@ -67,7 +67,7 @@
     <?php
     } else {
         echo "<p>Erro ao receber dados</p>";
-        echo "<a href='cadpessoa.php'>Cadastre-se</a>";
+        echo "<a href='cadotaku.php'>Cadastre-se</a>";
         echo "  ou  ";
         echo "<a href='login.php'>Faça o login</a>";
     }
