@@ -13,26 +13,26 @@
     <?php
     session_start();
     if (isset($_SESSION["logado"]) && $_SESSION["logado"] == 'sim') {
-        if (isset($_GET['idotaku'])) {
-            $id = $_GET['idotaku'];
-            $sql = "Select * from tbotaku where idotaku=$id";
+        if (isset($_GET['IDOtaku'])) {
+            $IDOtaku = $_GET['IDOtaku'];
+            $sql = "Select * from tbotaku where IDOtaku=$IDOtaku";
             require_once "conexao.php";
             $result = $conn->query($sql);
             $dados = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($dados as $linha) { ?>
                 <form name="form1" action="editarotaku2.php" method="POST" class="textocentralizado">
                     <label>Id: </label><?php echo $linha['idotaku']; ?> <br>
-                    <input type="hidden" name="id" value="<?php echo $linha['idotaku']; ?>">
+                    <input type="hidden" name="IDOtaku" value="<?php echo $linha['IDOtaku']; ?>">
                     <label>Nome</label>
-                    <input type="text" name="nome" value="<?php echo $linha['nome']; ?>" placeholder="Digite seu Nome" required><br><br>
+                    <input type="text" name="Nome" value="<?php echo $linha['Nome']; ?>" placeholder="Digite seu Nome" required><br><br>
                     <label>Nickname</label>
-                    <input type="text" name="nick" value="<?php echo $linha['nickname']; ?>" placeholder="Digite seu Nickname(Apelido)" required><br><br>
+                    <input type="text" name="Nickname" value="<?php echo $linha['Nickname']; ?>" placeholder="Digite seu Nickname(Apelido)" required><br><br>
                     <label>E-mail</label>
-                    <input type="email" name="email" value="<?php echo $linha['email']; ?>" placeholder="Digite seu E-mail" required><br><br>
+                    <input type="email" name="Email" value="<?php echo $linha['Email']; ?>" placeholder="Digite seu E-mail" required><br><br>
                     <label>Senha</label>
-                    <input type="password" name="senha" value="<?php echo $linha['senha']; ?>" placeholder="Digite sua Senha" required><br><br>
+                    <input type="password" name="Senha" value="<?php echo $linha['Senha']; ?>" placeholder="Digite sua Senha" required><br><br>
                     <label>Qual seu Anime Favorito?</label>
-                    <input type="text" name="animefavorito" value="<?php echo $linha['animefavorito']; ?>" placeholder="Digite seu Anime Favorito" required><br><br>
+                    <input type="text" name="AnimeFavorito" value="<?php echo $linha['AnimeFavorito']; ?>" placeholder="Digite seu Anime Favorito" required><br><br>
                     <input type="submit" value="Salvar">
                     <input type="reset" value="Cancelar">
                 </form>
@@ -44,7 +44,7 @@
         echo "<a href='login.php'>Faça o login</a>";
     }
     ?>
-    <a href="index.php">Voltar</a><br>
+    <a href="home.php">Voltar</a><br>
 </body>
 
 </html>

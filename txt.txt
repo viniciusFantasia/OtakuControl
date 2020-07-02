@@ -1,3 +1,8 @@
 "como deixar uma página só para os admnistradores?"
 "como compartilhar do mesmo banco de dados?"
 "O usuario pode alterar dados de sua propria conta, como fazer para essas alterações serem lançadas no banco?"
+
+Novas perguntas
+"Como pegar o id do radio e enviar pra uma função do js"
+"Perguntar se os parametros em cadanime para editar e excluir estão sendo passador corretamente"
+"em editaranime1 como passar o valor selecionado para editaranime2"
