@@ -19,11 +19,13 @@
         require_once "conexao.php";
         $result = $conn->query($sql);
         $dados = $result->fetchAll(PDO::FETCH_ASSOC);
+        
+      
         if ($result->rowCount() == 1) {
             foreach ($dados as $linha) {
                 $_SESSION["logado"] = 'sim';
-                $_SESSION["idusuario"] = $linha['idotaku'];
-                $_SESSION["nomeusuario"] = $linha['nome'];
+                $_SESSION["idusuario"] = $linha['IDOtaku'];
+                $_SESSION["nomeusuario"] = $linha['Nome'];
                 echo "<p>Seja vem vindo(a) " . $_SESSION["nomeusuario"] . " !</p><br>";
                 echo "<a href='cadotaku.php'>Perfil</a><br>";
                 echo "<a href='cadanimes.php'>Cadastro de Animes</a><br>";

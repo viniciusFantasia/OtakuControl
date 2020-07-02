@@ -26,9 +26,10 @@
     ?>
     <a href="cadanime.php">Cadastre um Anime</a><br>
     <a href="login.php">Acesse o sistema</a><br>
-    <br>
-    <br>
-    <p class="textocentralizado">Projeto desenvolvido por Fantasia e Longhi - <strong>Faghi.Inc</strong></p>
+    <div class="footer">
+    <p class="textocentralizado">Projeto desenvolvido por Fantasia e Longhi - <strong>Faghi.Inc</strong></p>  
+    </div>
 </body>
+
 
 </html>

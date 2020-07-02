@@ -13,9 +13,9 @@
     <h3 >Login</h3>
     <?php
         session_start();
-        session_destroy();
+      //  session_destroy();
     ?>
-    <form name="form1" action="validarlogin.php" method="POST">
+   <form name="form1" action="validarlogin.php" method="POST">
         <label>Email</label><br><input type="text" name="email" value="" placeholder="Digite seu E-mail" required><br><br>
         <label>Senha</label><br><input type="password" name="senha" value="" placeholder="Digite sua Senha" required><br><br>
         <br><br>
