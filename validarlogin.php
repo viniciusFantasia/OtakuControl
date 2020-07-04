@@ -12,21 +12,21 @@
     <h1>Otaku Control</h1>
     <?php
     session_start();
-    if (isset($_POST['email']) && isset($_POST['senha'])) {
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $sql = "Select * from tbotaku where email='$email' and senha='$senha'";
+    if (isset($_POST['Email']) && isset($_POST['Senha'])) {
+        $Email = $_POST['Email'];
+        $Senha = $_POST['Senha'];
+        $sql = "Select * from TBOtaku where Email='$Email' and Senha='$Senha'";
         require_once "conexao.php";
         $result = $conn->query($sql);
         $dados = $result->fetchAll(PDO::FETCH_ASSOC);
         if ($result->rowCount() == 1) {
             foreach ($dados as $linha) {
                 $_SESSION["logado"] = 'sim';
-                $_SESSION["idusuario"] = $linha['idotaku'];
-                $_SESSION["nomeusuario"] = $linha['nome'];
-                echo "<p>Seja vem vindo(a) " . $_SESSION["nomeusuario"] . " !</p><br>";
+                $_SESSION["IDOtaku"] = $linha['IDOtaku'];
+                $_SESSION["Nome"] = $linha['Nome'];
+                echo "<p>Seja vem vindo(a) " . $_SESSION["Nome"] . " !</p><br>";
                 echo "<a href='cadotaku.php'>Perfil</a><br>";
-                echo "<a href='cadanimes.php'>Cadastro de Animes</a><br>";
+                echo "<a href='cadanime.php'>Cadastro de Animes</a><br>";
             }
         } else {
             $_SESSION["logado"] = 'não';
