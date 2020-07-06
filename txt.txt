@@ -6,3 +6,6 @@ Novas perguntas
 "Como pegar o id do radio e enviar pra uma função do js"
 "Perguntar se os parametros em cadanime para editar e excluir estão sendo passador corretamente"
 "em editaranime1 como passar o valor selecionado para editaranime2"
+"como deixar uma marca D'agua de uma imagem pra deixar de plano de fundo de todas as telas"
+"como estilizar uma fonte com css, ou se é mais fácil fazer um logo via editores de imagens com o nome do site
+e anexar"
