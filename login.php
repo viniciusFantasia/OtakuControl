@@ -18,9 +18,6 @@
    <form name="form1" action="validarlogin.php" method="POST">
         <label>Email</label><br><input type="text" name="email" value="" placeholder="Digite seu E-mail" required><br><br>
         <label>Senha</label><br><input type="password" name="senha" value="" placeholder="Digite sua Senha" required><br><br>
-    <form name="form1" action="validarlogin.php" method="POST">
-        <label>E-mail</label><br><input type="text" name="Email" value="" placeholder="Digite seu E-mail" required><br><br>
-        <label>Senha</label><br><input type="password" name="Senha" value="" placeholder="Digite sua Senha" required><br><br>
         <br><br>
         <input type="submit" value="Entrar">
     </form>
