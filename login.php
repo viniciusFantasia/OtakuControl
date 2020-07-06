@@ -22,7 +22,7 @@
         <input type="submit" value="Entrar">
     </form>
     <a href='cadotaku.php'>Cadastre-se</a></br>
-    <a href="index.php">Voltar</a><br>
+    <a href="home.php">Voltar</a><br>
 </body>
 
 </html>
