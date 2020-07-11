@@ -9,3 +9,10 @@ Novas perguntas
 "como deixar uma marca D'agua de uma imagem pra deixar de plano de fundo de todas as telas"
 "como estilizar uma fonte com css, ou se é mais fácil fazer um logo via editores de imagens com o nome do site
 e anexar"
+
+
+O QUE FALTA FAZER
+*mudar o css dos botões
+*mudar o tamanho dos imputs e estilizar as bordas
+*mudar o css do link pra parecer com um botão
+*mudar o css da tabela pra ficar bonitinha tanto as bordas como as letras e a orientação do texto dentro

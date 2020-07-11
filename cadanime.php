@@ -16,7 +16,7 @@
         </div>
     </div>
     <div id="site">
-        <img id="logo" src="imagens/logo2.png" alt="" /> 
+        <img id="logo" src="imagens/logo2.png" alt="" />
         <?php
         session_start();
         if (isset($_SESSION["logado"]) && $_SESSION["logado"] == 'sim' && isset($_SESSION["IDOtaku"])) {
@@ -26,55 +26,42 @@
             <h2>Cadastro de Anime</h2><br>
             <br>
             <form name="form1" action="inseriranime.php" method="POST">
+                <input type="hidden" name="IDOtaku" value="<?php echo $IDOtaku; ?>">
                 <label>Anime</label><br>
-                <input type="text" name="anime" value="" placeholder="Digite o nome do anime" required><br><br><br>
+                <input type="text" name="Nome" value="" placeholder="Digite o nome do anime" required><br><br><br>
                 <label>Que Temporada você está?</label><br>
-                <input type="number" name="temporada" value="" placeholder="Digite a temporada que você está" required><br><br>
-                <!-- <label><strong>Episódios</strong></label><br> -->
+                <input type="number" name="Temporada" value="" placeholder="Digite a temporada que você está" required><br><br>
                 <label>Que Episódio você está?</label><br>
-                <input type="radio" id="completo" name="episodio" value="completo" onclick="assistir()" required>
+                <input type="radio" id="completo" name="Episodio" value="Completo" required>
                 <label for="completo">Completei, Assisti Tudo.</label><br>
-                <input type="radio" id="episodio" name="episodio" value="episodio" onclick="assistir()" required>
+                <input type="radio" id="episodio" name="Episodio" value="Incompleto" required>
                 <label for="episodio">Parei em um episódio.</label><br>
-                <input type="radio" id="inicio" name="episodio" value="inicio" onclick="assistir()" required>
+                <input type="radio" id="inicio" name="Episodio" value="Inicio" required>
                 <label for="inicio">Ainda pretendo começar.</label><br>
                 <br>
-                <script>
-                    function assistir() {
-                        var $value = form1.episodio.value;
-                        if ($value == 'episodio') {
-                            //display
-                            //mandar um imput number, para o otaku preencher que anime ele parou
-                            //e mandar esse número para salvar no banco, na coluna episodio
-                        }
-                        if ($value == 'completo') {
-                            //mandar a palavra 'completo' a ser salva no banco, na coluna episodio
-                        }
-                        if ($value == 'inicio') {
-                            //mandar a palavra 'inicio' a ser salva no banco, na coluna episodio
-                        }
-                    }
-                </script>
-                <label>Observação</label><br><input type="text" name="observacao" value="" placeholder="Digite algo que te marcou neste anime"><br><br>
+                <label>Observação</label><br><input type="text" name="Observacao" value="" placeholder="Digite algo que te marcou neste anime"><br><br>
                 <br>
                 <label>Categoria</label><br>
-                <select name="tipo" id="tipo">
+                <select name="Tipo" id="tipo">
                     <option value="Shounen">Shounen</option>
                     <option value="Shoujo">Shoujo</option>
                     <option value="Seinen">Seinen</option>
                     <option value="Outros">Outros</option>
                 </select>
                 <br><br>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Cadastrar">
                 <input type="reset" value="Cancelar">
                 <br>
                 <br>
             </form>
-            <h3>Minha Biblioteca de Animes</h3>
             <br>
+            <h3>Seus Animes</h3>
             <br>
             <table>
                 <tr>
+                    <th>
+                        ID
+                    </th>
                     <th>
                         Anime
                     </th>
@@ -85,6 +72,9 @@
                         Episódio
                     </th>
                     <th>
+                        Categoria
+                    </th>
+                    <th>
                         Observação
                     </th>
                     <th>
@@ -92,15 +82,15 @@
                     </th>
                 </tr>
                 <?php
-                $sql = "Select * from TBAnimes where IDOtaku=$IDOtaku order by Nome ";
+                $sql = "Select * from TBAnimes where IDOtaku=$IDOtaku order by Nome";
                 require_once "conexao.php";
                 $result = $conn->query($sql);
                 $dados = $result->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($dados as $linha) {
-                    echo "<tr><td>" . $linha["Nome"] . "</td><td> " . $linha["Temporada"] . "</td>" .
-                        "<td>" . $linha["Episodio"] . "</td><td>" . $linha["Observacao"] . "</td>" .
-                        //perguntar se essa passagem de parametros está correta.
-                        "<td><a href='editaranime.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>Editar</a> " .
+                    echo "<tr><td>" . $linha["IDAnime"] . "</td><td>" . $linha["Nome"] . "</td><td> " . $linha["Temporada"] . "</td>" .
+                        "<td>" . $linha["Episodio"] . "</td><td>" . $linha["Tipo"] . "</td>" .
+                        "<td>" . $linha["Observacao"] . "</td>" .
+                        "<td><a href='editaranime1.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>Editar</a> " .
                         "<a href='excluiranime.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>Excluir</a></td>" .
                         "</tr>";
                 }
@@ -114,7 +104,8 @@
             echo "<a href='login.php'>Faça o login</a>";
         }
         ?>
-        <a href="home.php">Voltar</a><br>
+        <br>
+        <a href="home.php">Home</a><br>
     </div>
 </body>
 

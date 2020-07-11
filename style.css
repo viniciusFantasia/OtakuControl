@@ -1,28 +1,41 @@
-<<<<<<< HEAD
-*  {
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-html, body {height:100%;}
+html,
+body {
+    height: 100%;
+}
 
 .geral {
-    min-height:100%;
-    position:relative;
-    width:800px;
+    min-height: 100%;
+    position: relative;
+    width: 800px;
 }
 
 .footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-.content {overflow:hidden;}
-.aside {width:200px;}
-.fleft {float:left;}
-.fright {float:right;}
-=======
+.content {
+    overflow: hidden;
+}
+
+.aside {
+    width: 200px;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -105,4 +118,3 @@ table {
     margin: 30px 30px 30px 30px;
     padding: 1px 1px 1px 1px;
 }
->>>>>>> 757341afab5e0edb636aa1d17c9c767689de8b17

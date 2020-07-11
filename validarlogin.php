@@ -24,21 +24,15 @@
         if ($result->rowCount() == 1) {
             foreach ($dados as $linha) {
                 $_SESSION["logado"] = 'sim';
-<<<<<<< HEAD
-                $_SESSION["idusuario"] = $linha['IDOtaku'];
+                $_SESSION["IDOtaku"] = $linha['IDOtaku'];
                 $_SESSION["nomeusuario"] = $linha['Nome'];
                 echo "<p>Seja vem vindo(a) " . $_SESSION["nomeusuario"] . " !</p><br>";
-=======
-                $_SESSION["IDOtaku"] = $linha['IDOtaku'];
-                $_SESSION["Nome"] = $linha['Nome'];
-                echo "<p>Seja vem vindo(a) " . $_SESSION["Nome"] . " !</p><br>";
->>>>>>> 757341afab5e0edb636aa1d17c9c767689de8b17
                 echo "<a href='cadotaku.php'>Perfil</a><br>";
                 echo "<a href='cadanime.php'>Cadastro de Animes</a><br>";
             }
         } else {
             $_SESSION["logado"] = 'não';
-            $_SESSION["idusuario"] = 0;
+            $_SESSION["IDOtaku"] = 0;
             echo "<p>Usuário ou senha inválidos.</p>";
         }
     } else {
@@ -49,7 +43,8 @@
     }
     ?>
     </table>
-    <a href="home.php">Voltar</a><br>
+    <br>
+    <a href="home.php">Home</a><br>
 </body>
 
 </html>

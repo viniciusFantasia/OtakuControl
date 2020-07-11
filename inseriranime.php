@@ -22,17 +22,18 @@
         $Observacao = $_POST['Observacao'];
         $IDOtaku = $_POST['IDOtaku'];
 
-        //echo "<p> Anime: $descricao</p>";
-        //echo "<p> Temporada: $Temporada</p>";
-        //echo "<p> Episódio: $Episodio</p>";
-        //echo "<p> Tipo: $Tipo</p>";
-        //echo "<p> Observação: $Observacao</p>";
+        // echo "<p> Anime: $Nome</p>";
+        // echo "<p> Temporada: $Temporada</p>";
+        // echo "<p> Episodios: $Episodio</p>";
+        // echo "<p> Tipo: $Tipo</p>";
+        // echo "<p> Observação: $Observacao</p>";
+        // echo "<p> IDOtaku: $IDOtaku</p>";
 
 
          //montar a instrução SQL
-         $sql="insert into TBAnimes (Nome, Episodio, IDOtaku, IDTipo, Observacao, Temporada) 
+         $sql="insert into TBAnimes (Nome, Episodio, IDOtaku, Tipo, Observacao, Temporada) 
          values('$Nome','$Episodio','$IDOtaku','$Tipo', '$Observacao', '$Temporada')";
-         echo $sql;
+        //  echo $sql;
          require_once "conexao.php";
          $conn->exec($sql);
          echo "<p>Anime Inserido com sucesso!!</p>";

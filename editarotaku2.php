@@ -12,8 +12,9 @@
     <h1>Otaku Control</h1>
     <h3>Dados Pessoais Atualizados</h3>
     <?php
-    if (isset($_POST['Nome']) && isset($_POST['Email']) 
+    if (isset($_POST['IDOtaku']) && isset($_POST['Nome']) && isset($_POST['Email']) 
      && isset($_POST['Senha'])  && isset($_POST['AnimeFavorito'])  && isset($_POST['Nickname'])) {
+        $IDOtaku = $_POST['IDOtaku'];
         $Nome = $_POST['Nome'];
         $Email = $_POST['Email'];
         $Senha = $_POST['Senha'];

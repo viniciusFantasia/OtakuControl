@@ -24,6 +24,13 @@
         $Tipo = $_POST['Tipo'];
         $Observacao = $_POST['Observacao'];
 
+        // echo "<p> Anime: $Nome</p>";
+        // echo "<p> Temporada: $Temporada</p>";
+        // echo "<p> Episodios: $Episodio</p>";
+        // echo "<p> Tipo: $Tipo</p>";
+        // echo "<p> Observação: $Observacao</p>";
+        // echo "<p> IDOtaku: $IDOtaku</p>";
+
          //montar a instrução SQL
          $sql="update TBAnimes set 
          Nome = '$Nome',

@@ -17,52 +17,84 @@
         if (isset($_GET['IDAnime']) && isset($_GET['IDOtaku'])) {
             $IDOtaku = $_GET['IDOtaku'];
             $IDAnime = $_GET['IDAnime'];
-            $sql = "Select * from TBAnime where IDOtaku=$IDOtaku AND IDAnime=$IDAnime";
+            $sql = "Select * from TBAnimes where IDOtaku=$IDOtaku AND IDAnime=$IDAnime";
             require_once "conexao.php";
             $result = $conn->query($sql);
             $dados = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($dados as $linha) { ?>
                 <form name="form1" action="editaranime2.php" method="POST" class="textocentralizado">
-                    <label>IDAnime: </label><?php echo $linha['IDAnime']; ?> <br>
+                    <br>
                     <input type="hidden" name="IDAnime" value="<?php echo $linha['IDAnime']; ?>">
-                    <label>Otaku</label>
-                    <input type="text" name="IDOtaku" value="<?php echo $linha['IDOtaku']; ?>"><br><br>
+                    <input type="hidden" name="IDOtaku" value="<?php echo $linha['IDOtaku']; ?>">
                     <label>Anime</label>
                     <input type="text" name="Nome" value="<?php echo $linha['Nome']; ?>" placeholder="Digite o Nome do Anime" required><br><br>
                     <label>Que Temporada você está?</label>
                     <input type="text" name="Temporada" value="<?php echo $linha['Temporada']; ?>" placeholder="Digite a Temporada"><br><br>
                     <label>Que episódio você está?</label><br>
-                    <input type="radio" id="completo" name="episodio" value="completo" onclick="assistir()" required><br>
-                    <label for="completo">Completei, Assisti Tudo.</label><br>
-                    <input type="radio" id="episodio" name="episodio" value="episodio" onclick="assistir()" required><br>
-                    <label for="episodio">Parei em um episódio.</label><br>
-                    <input type="radio" id="inicio" name="episodio" value="inicio" onclick="assistir()" required><br>
-                    <label for="inicio">Ainda pretendo começar.</label><br>
+                    <?php
+                    if($linha['Episodio'] === 'Completo') { ?>
+                        <input type="radio" id="Completo" name="Episodio" value="Completo" required checked="checked">
+                        <label for="Completo">Completei, Assisti Tudo.</label><br>
+                        <input type="radio" id="Incompleto" name="Episodio" value="Incompleto" required>
+                        <label for="Incompleto">Parei em um episódio.</label><br>
+                        <input type="radio" id="Inicio" name="Episodio" value="Inicio" required>
+                        <label for="Inicio">Ainda pretendo começar.</label><br>
+                    <?php }
+                    if($linha['Episodio'] === 'Incompleto') { ?>
+                        <input type="radio" id="Completo" name="Episodio" value="Completo" required>
+                        <label for="Completo">Completei, Assisti Tudo.</label><br>
+                        <input type="radio" id="Incompleto" name="Episodio" value="Incompleto" required checked="checked">
+                        <label for="Incompleto">Parei em um episódio.</label><br>
+                        <input type="radio" id="Inicio" name="Episodio" value="Inicio" required>
+                        <label for="Inicio">Ainda pretendo começar.</label><br>
+                    <?php }
+                    if($linha['Episodio'] === 'Inicio') { ?>
+                        <input type="radio" id="Completo" name="Episodio" value="Completo" required>
+                        <label for="Completo">Completei, Assisti Tudo.</label><br>
+                        <input type="radio" id="Incompleto" name="Episodio" value="Incompleto" required>
+                        <label for="Incompleto">Parei em um episódio.</label><br>
+                        <input type="radio" id="Inicio" name="Episodio" value="Inicio" required checked="checked">
+                        <label for="Inicio">Ainda pretendo começar.</label><br>
+                    <?php
+                    }
+                    ?>
                     <br>
-                    <script>
-                        function assistir() {
-                            var $value;
-                            if ($value == 'episodio') {
-                                //mandar um imput number, para o otaku preencher que anime ele parou
-                                //e mandar esse número para salvar no banco, na coluna episodio
-                            }
-                            if ($value == 'completo') {
-                                //mandar a palavra 'completo' a ser salva no banco, na coluna episodio
-                            }
-                            if ($value == 'inicio') {
-                                //mandar a palavra 'inicio' a ser salva no banco, na coluna episodio
-                            }
-                        }
-                    </script>
-                    <label>Observacao</label><br><input type="text" name="observacao" value="<?php echo $linha['Observacao']; ?>" placeholder="Digite algo que te marcou neste anime"><br><br>
-                    <br><br>
+                    <label>Observacao</label><br><input type="text" name="Observacao" value="<?php echo $linha['Observacao']; ?>" placeholder="Digite algo que te marcou neste anime"><br><br>
+                    <br>
                     <label>Categoria</label><br>
-                    <select name="tipo" id="tipo">
-                        <option value="Shounen">Shounen</option>
+                    <?php if($linha['Tipo'] === 'Shounen') { ?>
+                    <select name="Tipo" id="tipo">
+                        <option value="Shounen" selected>Shounen</option>
                         <option value="Shoujo">Shoujo</option>
                         <option value="Seinen">Seinen</option>
                         <option value="Outros">Outros</option>
-                    </select>
+                    </select><br>
+                    <?php }
+                    if($linha['Tipo'] === 'Shoujo') { ?>
+                    <select name="Tipo" id="tipo">
+                        <option value="Shounen">Shounen</option>
+                        <option value="Shoujo" selected>Shoujo</option>
+                        <option value="Seinen">Seinen</option>
+                        <option value="Outros">Outros</option>
+                    </select><br>
+                    <?php }
+                    if($linha['Tipo'] === 'Seinen') { ?>
+                     <select name="Tipo" id="tipo">
+                        <option value="Shounen">Shounen</option>
+                        <option value="Shoujo">Shoujo</option>
+                        <option value="Seinen" selected>Seinen</option>
+                        <option value="Outros">Outros</option>
+                    </select><br>
+                    <?php }
+                    if($linha['Tipo'] === 'Outros') { ?>
+                     <select name="Tipo" id="tipo">
+                        <option value="Shounen">Shounen</option>
+                        <option value="Shoujo">Shoujo</option>
+                        <option value="Seinen">Seinen</option>
+                        <option value="Outros" selected>Outros</option>
+                    </select><br>
+                    <?php }?>
+                    <br>    
                     <input type="submit" value="Salvar">
                     <input type="reset" value="Cancelar">
                 </form>
