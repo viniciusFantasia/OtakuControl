@@ -12,7 +12,5 @@ e anexar"
 
 
 O QUE FALTA FAZER
-*mudar o css dos botões
-*mudar o tamanho dos imputs e estilizar as bordas
-*mudar o css do link pra parecer com um botão
-*mudar o css da tabela pra ficar bonitinha tanto as bordas como as letras e a orientação do texto dentro
+*Colocar os id de site e fundo em todas as páginas variando as imagens de fundo
+*Dar espaçamento entre os botões se necessário

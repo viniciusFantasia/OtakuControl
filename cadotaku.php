@@ -34,17 +34,17 @@
             <?php
             foreach ($dados as $linha) { ?>
                 <form name="form1" class="textocentralizado">
-                    <label>IDOtaku: </label><?php echo $linha['IDOtaku']; ?> <br>
+                    <!-- <label>IDOtaku: </label><?php echo $linha['IDOtaku']; ?> <br> -->
                     <input type="hidden" name="IDOtaku" value="<?php echo $linha['IDOtaku']; ?>">
-                    <label>Nome</label>
+                    <label>Nome</label><br>
                     <input type="text" name="Nome" value="<?php echo $linha['Nome']; ?>" placeholder="Digite seu Nome" required><br><br>
-                    <label>Nickname</label>
+                    <label>Nickname</label><br>
                     <input type="text" name="Nickname" value="<?php echo $linha['Nickname']; ?>" placeholder="Digite seu Nickname(Apelido)" required><br><br>
-                    <label>E-mail</label>
+                    <label>E-mail</label><br>
                     <input type="email" name="Email" value="<?php echo $linha['Email']; ?>" placeholder="Digite seu E-mail" required><br><br>
-                    <label>Senha</label>
+                    <label>Senha</label><br>
                     <input type="password" name="Senha" value="<?php echo $linha['Senha']; ?>" placeholder="Digite sua Senha" required><br><br>
-                    <label>Qual seu Anime Favorito?</label>
+                    <label>Qual seu Anime Favorito?</label><br>
                     <input type="text" name="AnimeFavorito" value="<?php echo $linha['AnimeFavorito']; ?>" placeholder="Digite seu Anime Favorito" required><br><br>
                     <?php echo "<a href='editarotaku1.php?IDOtaku=" . $linha["IDOtaku"] ."'>Editar Perfil</a><br>";?><br>
                     <?php echo"<a href='excluirotaku.php?IDOtaku=" . $linha["IDOtaku"] . "'>Deletar Perfil</a>";?>

@@ -33,11 +33,11 @@
                 <input type="number" name="Temporada" value="" placeholder="Digite a temporada que você está" required><br><br>
                 <label>Que Episódio você está?</label><br>
                 <input type="radio" id="completo" name="Episodio" value="Completo" required>
-                <label for="completo">Completei, Assisti Tudo.</label><br>
+                <label class="normal" for="completo">Completei, Assisti Tudo.</label><br>
                 <input type="radio" id="episodio" name="Episodio" value="Incompleto" required>
-                <label for="episodio">Parei em um episódio.</label><br>
+                <label class="normal" for="episodio">Parei em um episódio.</label><br>
                 <input type="radio" id="inicio" name="Episodio" value="Inicio" required>
-                <label for="inicio">Ainda pretendo começar.</label><br>
+                <label class="normal" for="inicio">Ainda pretendo começar.</label><br>
                 <br>
                 <label>Observação</label><br><input type="text" name="Observacao" value="" placeholder="Digite algo que te marcou neste anime"><br><br>
                 <br>
