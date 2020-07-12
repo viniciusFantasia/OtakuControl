@@ -9,7 +9,13 @@
 </head>
 
 <body class="textocentralizado">
-    <h1>Otaku Control</h1>
+<div id="fundo-externo">
+        <div id="fundo">
+            <img src="imagens/planodefundo.png" alt="" />
+        </div>
+    </div>
+    <div id="site">
+        <img id="logo" src="imagens/logo2.png" alt="" />
     <?php
     session_start();
     if (isset($_POST['Email']) && isset($_POST['Senha'])) {
@@ -19,16 +25,16 @@
         require_once "conexao.php";
         $result = $conn->query($sql);
         $dados = $result->fetchAll(PDO::FETCH_ASSOC);
-        
-      
         if ($result->rowCount() == 1) {
             foreach ($dados as $linha) {
                 $_SESSION["logado"] = 'sim';
                 $_SESSION["IDOtaku"] = $linha['IDOtaku'];
                 $_SESSION["nomeusuario"] = $linha['Nome'];
-                echo "<p>Seja vem vindo(a) " . $_SESSION["nomeusuario"] . " !</p><br>";
-                echo "<a href='cadotaku.php'>Perfil</a><br>";
-                echo "<a href='cadanime.php'>Cadastro de Animes</a><br>";
+                echo "<p>Seja vem vindo(a) " . $_SESSION["nomeusuario"] . " !</p><br><br>";
+                echo "<h3>MENU</h3><br><br>";
+                echo "<a href='cadotaku.php'>OTAKUS NO CONTROL</a><br><br><br>";
+                echo "<a href='visualizaanimes.php'>ANIMES NO CONTROL</a><br><br><br>";
+                echo "<a href='cadanime.php'>CADASTRE UM ANIME</a><br><br>";
             }
         } else {
             $_SESSION["logado"] = 'não';
@@ -36,15 +42,16 @@
             echo "<p>Usuário ou senha inválidos.</p>";
         }
     } else {
-        echo "<p>Erro ao receber dados</p>";
-        echo "<a href='cadotaku.php'>Cadastre-se</a>";
-        echo "  ou  ";
-        echo "<a href='login.php'>Faça o login</a>";
+        echo "<p>ERRO AO RECEBER OS DADOS</p>";
+            echo "<a href='cadotaku.php'>CADASTRE-SE</a>";
+            echo "  OU  ";
+            echo "<a href='login.php'>FAÇA O LOGIN</a>";
     }
     ?>
     </table>
     <br>
-    <a href="home.php">Home</a><br>
+    <a href="home.php">HOME</a><br>
+    </div>
 </body>
 
 </html>

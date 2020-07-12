@@ -12,5 +12,4 @@ e anexar"
 
 
 O QUE FALTA FAZER
-*Colocar os id de site e fundo em todas as páginas variando as imagens de fundo
-*Dar espaçamento entre os botões se necessário
+feedback do alceu

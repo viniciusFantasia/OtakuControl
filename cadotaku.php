@@ -12,7 +12,7 @@
 <body class="textocentralizado">
     <div id="fundo-externo2">
         <div id="fundo2">
-            <img src="imagens/planodefundo.png" alt="" />
+            <img src="imagens/ino_shippuden.jpeg" alt="" />
         </div>
     </div>
     <?php
@@ -35,20 +35,20 @@
             foreach ($dados as $linha) { ?>
                 <form name="form1" class="textocentralizado">
                     <!-- <label>IDOtaku: </label><?php echo $linha['IDOtaku']; ?> <br> -->
-                    <input type="hidden" name="IDOtaku" value="<?php echo $linha['IDOtaku']; ?>">
+                    <input type="hidden" name="IDOtaku" value="<?php echo $linha['IDOtaku']; ?>" disabled>
                     <label>Nome</label><br>
-                    <input type="text" name="Nome" value="<?php echo $linha['Nome']; ?>" placeholder="Digite seu Nome" required><br><br>
+                    <input type="text" name="Nome" value="<?php echo $linha['Nome']; ?>" placeholder="Digite seu Nome" required disabled><br><br>
                     <label>Nickname</label><br>
-                    <input type="text" name="Nickname" value="<?php echo $linha['Nickname']; ?>" placeholder="Digite seu Nickname(Apelido)" required><br><br>
+                    <input type="text" name="Nickname" value="<?php echo $linha['Nickname']; ?>" placeholder="Digite seu Nickname(Apelido)" required disabled><br><br>
                     <label>E-mail</label><br>
-                    <input type="email" name="Email" value="<?php echo $linha['Email']; ?>" placeholder="Digite seu E-mail" required><br><br>
+                    <input type="email" name="Email" value="<?php echo $linha['Email']; ?>" placeholder="Digite seu E-mail" required disabled><br><br>
                     <label>Senha</label><br>
-                    <input type="password" name="Senha" value="<?php echo $linha['Senha']; ?>" placeholder="Digite sua Senha" required><br><br>
+                    <input type="password" name="Senha" value="<?php echo $linha['Senha']; ?>" placeholder="Digite sua Senha" required disabled><br><br>
                     <label>Qual seu Anime Favorito?</label><br>
-                    <input type="text" name="AnimeFavorito" value="<?php echo $linha['AnimeFavorito']; ?>" placeholder="Digite seu Anime Favorito" required><br><br>
-                    <?php echo "<a href='editarotaku1.php?IDOtaku=" . $linha["IDOtaku"] ."'>Editar Perfil</a><br>";?><br>
-                    <?php echo"<a href='excluirotaku.php?IDOtaku=" . $linha["IDOtaku"] . "'>Deletar Perfil</a>";?>
-                </form><br>
+                    <input type="text" name="AnimeFavorito" value="<?php echo $linha['AnimeFavorito']; ?>" placeholder="Digite seu Anime Favorito" required disabled><br><br><br>
+                    <?php echo "<a href='editarotaku1.php?IDOtaku=" . $linha["IDOtaku"] ."'>EDITAR</a><a href='excluirotaku.php?IDOtaku=" . $linha["IDOtaku"] . "'>DELETAR</a>";?><br><br>
+                    <!-- <?php echo"<a href='excluirotaku.php?IDOtaku=" . $linha["IDOtaku"] . "'>DELETAR</a>";?> -->
+                </form><br><BR>
                 <h2>Otakus no Control</h2>
                 <table>
                     <tr>
@@ -93,16 +93,16 @@
                     <label>E-mail</label><br><input type="email" name="Email" value="" placeholder="Digite o E-mail" required><br><br>
                     <label>Senha</label><br><input type="password" name="Senha" value="" placeholder="Digite a Senha" required><br><br>
                     <label>Qual seu Anime Favorito?</label><br><input type="text" name="AnimeFavorito" value="" placeholder="Digite Anime Favorito"><br><br>
-                    <input type="submit" value="Cadastrar">
-                    <input type="reset" value="Cancelar">
+                    <input type="submit" value="CADASTRAR">
+                    <input type="reset" value="CANCELAR">
                 </form><br>
             <?php
-            echo "  ou  ";
-            echo "<a href='login.php'>Faça o login</a>";
+            echo "  OU  ";
+            echo "<a href='login.php'>FAÇA O LOGIN</a>";
         }
             ?>
             </br>
-            <a href="home.php">Home</a><br>
+            <a href="home.php">HOME</a><br>
             </div>
 </body>
 

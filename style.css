@@ -90,7 +90,8 @@ html {
 }
 
 #fundo2 img {
-    width: 100%;
+    margin: 0px 0px 0px 300px;
+    width: 80%;
     position: absolute;
 }
 
@@ -192,11 +193,12 @@ label {
 
 a:link {
     width: 45%;
-    margin: 1px;
+    margin: 5px 5px 5px 1px;
+    padding: 8px 8px 8px 8px;
     color: #ff66c4;
     text-shadow: 0.8px 0.8px 0.8px #32f1a7;
     background-color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border: 2px solid #32f1a7;
     text-decoration: none;
@@ -207,11 +209,12 @@ a:link {
 
 a:visited {
     width: 45%;
-    margin: 5px;
+    margin: 5px 5px 5px 1px;
+    padding: 8px 8px 8px 8px;
     color: #ff66c4;
     text-shadow: 0.8px 0.8px 0.8px #32f1a7;
     background-color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border: 2px solid #32f1a7;
     text-decoration: none;
@@ -222,11 +225,12 @@ a:visited {
 
 a:hover {
     width: 45%;
-    margin: 1px;
+    margin: 5px 5px 5px 1px;
+    padding: 8px 8px 8px 8px;
     color: #ff66c4;
     text-shadow: 0.8px 0.8px 0.8px #32f1a7;
     background-color: #32f1a7;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border: 2px solid #ff66c4;
     text-decoration: none;
@@ -237,12 +241,18 @@ a:hover {
 
 a:active {
     width: 45%;
-    margin: 1px;
+    margin: 5px 5px 5px 1px;
+    padding: 8px 8px 8px 8px;
     color: #ff66c4;
     text-shadow: 0.8px 0.8px 0.8px #32f1a7;
     background-color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border: 2px solid #32f1a7;
     text-decoration: none;
+}
+
+.btnmenor {
+    margin: 1px 1px 1px 1px;
+    padding: 1px 1px 1px 1px;
 }

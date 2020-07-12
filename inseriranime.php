@@ -9,41 +9,50 @@
 </head>
 
 <body class="textocentralizado">
-    <h1>Otaku Control</h1>
-    <h3>Novo Anime</h3>
-    <?php
-    if (isset($_POST['Nome']) && isset($_POST['Temporada']) 
-     && isset($_POST['Episodio'])  && isset($_POST['Tipo'])
-     && isset($_POST['Observacao']) && isset($_POST['IDOtaku'])) {
-        $Nome = $_POST['Nome'];
-        $Temporada = $_POST['Temporada'];
-        $Episodio = $_POST['Episodio'];
-        $Tipo = $_POST['Tipo'];
-        $Observacao = $_POST['Observacao'];
-        $IDOtaku = $_POST['IDOtaku'];
+    <div id="fundo-externo">
+        <div id="fundo">
+            <img src="imagens/otakucontrol.jpg" alt="" />
+        </div>
+    </div>
+    <div id="site">
+        <img id="logo" src="imagens/logo2.png" alt="" />
+        <h3>Novo Anime</h3>
+        <?php
+        if (
+            isset($_POST['Nome']) && isset($_POST['Temporada'])
+            && isset($_POST['Episodio'])  && isset($_POST['Tipo'])
+            && isset($_POST['Observacao']) && isset($_POST['IDOtaku'])
+        ) {
+            $Nome = $_POST['Nome'];
+            $Temporada = $_POST['Temporada'];
+            $Episodio = $_POST['Episodio'];
+            $Tipo = $_POST['Tipo'];
+            $Observacao = $_POST['Observacao'];
+            $IDOtaku = $_POST['IDOtaku'];
 
-        // echo "<p> Anime: $Nome</p>";
-        // echo "<p> Temporada: $Temporada</p>";
-        // echo "<p> Episodios: $Episodio</p>";
-        // echo "<p> Tipo: $Tipo</p>";
-        // echo "<p> Observação: $Observacao</p>";
-        // echo "<p> IDOtaku: $IDOtaku</p>";
+            // echo "<p> Anime: $Nome</p>";
+            // echo "<p> Temporada: $Temporada</p>";
+            // echo "<p> Episodios: $Episodio</p>";
+            // echo "<p> Tipo: $Tipo</p>";
+            // echo "<p> Observação: $Observacao</p>";
+            // echo "<p> IDOtaku: $IDOtaku</p>";
 
 
-         //montar a instrução SQL
-         $sql="insert into TBAnimes (Nome, Episodio, IDOtaku, Tipo, Observacao, Temporada) 
+            //montar a instrução SQL
+            $sql = "insert into TBAnimes (Nome, Episodio, IDOtaku, Tipo, Observacao, Temporada) 
          values('$Nome','$Episodio','$IDOtaku','$Tipo', '$Observacao', '$Temporada')";
-        //  echo $sql;
-         require_once "conexao.php";
-         $conn->exec($sql);
-         echo "<p>Anime Inserido com sucesso!!</p>";
-    } else {
-        echo "<p> Erro aos receber os dados para inserir o anime!!! <p>";
-    }
-    ?>
-    <br>
-    <a href="cadanime.php">Voltar</a><br>
-    <a href="home.php">Home</a><br>
+            //  echo $sql;
+            require_once "conexao.php";
+            $conn->exec($sql);
+            echo "<p>Anime Inserido com sucesso!!</p>";
+        } else {
+            echo "<p> Erro aos receber os dados para inserir o anime!!! <p>";
+        }
+        ?>
+        <br>
+        <a href="cadanime.php">VOLTAR</a><br><br><br>
+        <a href="home.php">HOME</a><br><br>
+    </div>
 </body>
 
 </html>

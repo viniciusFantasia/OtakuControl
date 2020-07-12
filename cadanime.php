@@ -49,14 +49,13 @@
                     <option value="Outros">Outros</option>
                 </select>
                 <br><br>
-                <input type="submit" value="Cadastrar">
-                <input type="reset" value="Cancelar">
+                <input type="submit" value="CADASTRAR">
+                <input type="reset" value="CANCELAR">
                 <br>
                 <br>
             </form>
             <br>
             <h3>Seus Animes</h3>
-            <br>
             <table>
                 <tr>
                     <th>
@@ -77,7 +76,7 @@
                     <th>
                         Observação
                     </th>
-                    <th>
+                    <th colspan="2">
                         Ações
                     </th>
                 </tr>
@@ -90,22 +89,22 @@
                     echo "<tr><td>" . $linha["IDAnime"] . "</td><td>" . $linha["Nome"] . "</td><td> " . $linha["Temporada"] . "</td>" .
                         "<td>" . $linha["Episodio"] . "</td><td>" . $linha["Tipo"] . "</td>" .
                         "<td>" . $linha["Observacao"] . "</td>" .
-                        "<td><a href='editaranime1.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>Editar</a> " .
-                        "<a href='excluiranime.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>Excluir</a></td>" .
+                        "<td><a class='btnmenor'; href='editaranime1.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>EDITAR</a>" .
+                        "<a class='btnmenor'; href='excluiranime.php?IDOtaku=" . $linha["IDOtaku"] . "&IDAnime=" . $linha["IDAnime"] . "'>EXCLUIR</a></td>" .
                         "</tr>";
                 }
                 ?>
             </table>
         <?php
         } else {
-            echo "<p>Erro ao receber dados</p>";
-            echo "<a href='cadotaku.php'>Cadastre-se</a>";
-            echo "  ou  ";
-            echo "<a href='login.php'>Faça o login</a>";
+            echo "<p>ERRO AO RECEBER OS DADOS</p>";
+            echo "<a href='cadotaku.php'>CADASTRE-SE</a>";
+            echo "  OU  ";
+            echo "<a href='login.php'>FAÇA O LOGIN</a>";
         }
         ?>
         <br>
-        <a href="home.php">Home</a><br>
+        <a href="home.php">HOME</a><br>
     </div>
 </body>
 
